@@ -10,4 +10,10 @@ class Photographer {
       this.cameras = new ArrayList<Camera>();
   }
 
+
+  public String getName() {
+    return this.name;
+  }
+
+
 }
