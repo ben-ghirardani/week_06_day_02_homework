@@ -6,11 +6,15 @@ public class PhotographerTest {
 
   Photographer photographer;
   Camera camera;
+  DigitalCamera digitalcamera;
+  AnalogCamera analogcamera;
 
   @Before
   public void before() {
     photographer = new Photographer("Clare");
-    camera = new Camera();
+    camera = new Camera("Nikon 123");
+    digitalcamera = new DigitalCamera("Digital Camera");
+    analogcamera = new AnalogCamera("Analog Camera");
   }
 
   @Test
@@ -34,5 +38,23 @@ public class PhotographerTest {
     photographer.removeCamera(camera);
     assertEquals(0, photographer.cameraCount());
   }
+
+  @Test
+  public void digitalCameraCount(){
+    assertEquals(0, photographer.digitalCameraCount());
+  }
+
+  @Test
+  public void canAddDigitalCamera() {
+    photographer.addDigitalCamera(digitalcamera);
+    assertEquals(1, photographer.digitalCameraCount());
+  }
+
+  @Test
+  public void canRemoveDigitalCamera() {
+    photographer.removeDigitalCamera(digitalcamera);
+    assertEquals(0, photographer.digitalCameraCount());
+  }
+
 
 }
