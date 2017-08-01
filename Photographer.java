@@ -24,4 +24,8 @@ class Photographer {
     this.cameras.add(camera);
   }
 
+  public void removeCamera(Camera camera) {
+    this.cameras.remove(camera);
+  }
+
 }
