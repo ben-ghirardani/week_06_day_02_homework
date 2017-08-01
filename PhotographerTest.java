@@ -10,12 +10,23 @@ public class PhotographerTest {
   @Before
   public void before() {
     photographer = new Photographer("Clare");
-    camera = new Camera("Nikon 123", "black", "hi");
+    camera = new Camera();
   }
 
   @Test
   public void hasName() {
     assertEquals("Clare", photographer.getName());
+  }
+
+  @Test
+  public void cameraCount(){
+    assertEquals(0, photographer.cameraCount());
+  }
+
+  @Test
+  public void canAddCamera() {
+    photographer.addCamera(camera);
+    assertEquals(1, photographer.cameraCount());
   }
 
 }

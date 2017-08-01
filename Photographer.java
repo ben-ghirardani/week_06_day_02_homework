@@ -16,4 +16,12 @@ class Photographer {
   }
 
 
+  public int cameraCount() {
+    return this.cameras.size();
+  }
+
+  public void addCamera(Camera camera) {
+    this.cameras.add(camera);
+  }
+
 }
